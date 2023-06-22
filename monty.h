@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/types.h>
+#include <string.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <ctype.h>
@@ -100,4 +101,4 @@ void free_dlistint(stack_t *head);
 /* main */
 void free_vglo(void);
 
-#endif
+#endif /* MONTY.H */
