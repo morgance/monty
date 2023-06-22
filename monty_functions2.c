@@ -14,7 +14,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	{
 		return (NULL);
 	}
-	p = malloc(nmemb * size);
+	s = malloc(nmemb * size);
 	if (s == NULL)
 	{
 		return (NULL);
@@ -57,7 +57,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		if (!s)
 			return (NULL);
 		for (j = 0; j < old_size; j++)
-			p[j] = *((char *)ptr + j);
+			s[j] = *((char *)ptr + j);
 		free(ptr);
 	}
 	else
@@ -66,7 +66,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		if (!s)
 			return (NULL);
 		for (j = 0; j < new_size; j++)
-			p[j] = *((char *)ptr + j);
+			s[j] = *((char *)ptr + j);
 		free(ptr);
 	}
 	return (s);

@@ -47,16 +47,16 @@ void _add(stack_t **doubly, unsigned int line)
 	for (; aux != NULL; aux = aux->next, y++)
 		;
 
-	if (m < 2)
+	if (y < 2)
 	{
-		dprintf(2, "L%u: can't add, stack too short\n", cline);
+		dprintf(2, "L%u: can't add, stack too short\n", line);
 		free_vglo();
 		exit(EXIT_FAILURE);
 	}
 
 	aux = (*doubly)->next;
 	aux->n += (*doubly)->n;
-	_pop(doubly, cline);
+	_pop(doubly, line);
 }
 
 /**

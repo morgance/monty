@@ -4,7 +4,7 @@
  * _push - pushes an element to the stack
  *
  * @doubly: head of the linked list
- * @cline: line number
+ * @line: line number
  * Return: no return
  */
 void _push(stack_t **doubly, unsigned int line)
@@ -54,7 +54,7 @@ void _pall(stack_t **doubly, unsigned int line)
 
 	while (aux)
 	{
-		printf("%d\n", aux->m);
+		printf("%d\n", aux->n);
 		aux = aux->next;
 	}
 }
@@ -78,7 +78,7 @@ void _pint(stack_t **doubly, unsigned int line)
 		exit(EXIT_FAILURE);
 	}
 
-	printf("%d\n", (*doubly)->m);
+	printf("%d\n", (*doubly)->n);
 }
 
 /**
