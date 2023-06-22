@@ -1,5 +1,7 @@
 #include "monty.h"
 
+#include <stdio.h>
+
 /**
  * _push - pushes an element to the stack
  *
@@ -13,8 +15,8 @@ void _push(stack_t **doubly, unsigned int line)
 
 	if (!vglo.arg)
 	{
-		dprintf(2, "L%u: ", line);
-		dprintf(2, "usage: push integer\n");
+		fprintf(stderr, "L%u: ", line);
+		fprintf(stderr, "usage: push integer\n");
 		free_vglo();
 		exit(EXIT_FAILURE);
 	}
@@ -23,8 +25,8 @@ void _push(stack_t **doubly, unsigned int line)
 	{
 		if (!isdigit(vglo.arg[i]) && vglo.arg[i] != '-')
 		{
-			dprintf(2, "L%u: ", line);
-			dprintf(2, "usage: push integer\n");
+			fprintf(stderr, "L%u: ", line);
+			fprintf(stderr, "usage: push integer\n");
 			free_vglo();
 			exit(EXIT_FAILURE);
 		}
@@ -72,8 +74,8 @@ void _pint(stack_t **doubly, unsigned int line)
 
 	if (*doubly == NULL)
 	{
-		dprintf(2, "L%u: ", line);
-		dprintf(2, "can't pint, stack empty\n");
+		fprintf(stderr, "L%u: ", line);
+		fprintf(stderr, "can't pint, stack empty\n");
 		free_vglo();
 		exit(EXIT_FAILURE);
 	}
@@ -94,7 +96,7 @@ void _pop(stack_t **doubly, unsigned int line)
 
 	if (doubly == NULL || *doubly == NULL)
 	{
-		dprintf(2, "L%u: can't pop an empty stack\n", line);
+		fprintf(stderr, "L%u: can't pop an empty stack\n", line);
 		free_vglo();
 		exit(EXIT_FAILURE);
 	}
@@ -122,7 +124,7 @@ void _swap(stack_t **doubly, unsigned int line)
 
 	if (k < 2)
 	{
-		dprintf(2, "L%u: can't swap, stack too short\n", line);
+		fprintf(stderr, "L%u: can't swap, stack too short\n", line);
 		free_vglo();
 		exit(EXIT_FAILURE);
 	}

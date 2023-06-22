@@ -49,7 +49,7 @@ void _add(stack_t **doubly, unsigned int line)
 
 	if (y < 2)
 	{
-		dprintf(2, "L%u: can't add, stack too short\n", line);
+		fprintf(stderr, "L%u: can't add, stack too short\n", line);
 		free_vglo();
 		exit(EXIT_FAILURE);
 	}
@@ -91,7 +91,7 @@ void _sub(stack_t **doubly, unsigned int line)
 
 	if (m < 2)
 	{
-		dprintf(2, "L%u: can't sub, stack too short\n", line);
+		fprintf(stderr, "L%u: can't sub, stack too short\n", line);
 		free_vglo();
 		exit(EXIT_FAILURE);
 	}
